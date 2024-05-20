@@ -2,5 +2,13 @@
   "extends": "@saas/typescript-config/library.json",
   "include": [
     "src/**/*"
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
