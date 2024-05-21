@@ -2,5 +2,8 @@
   "extends": "@saas/tsconfig/library.json",
   "include": [
     "index.ts"
-  ]
+  ],
+  "compilerOptions": {
+    "moduleResolution": "bundler"
+  }
 }
