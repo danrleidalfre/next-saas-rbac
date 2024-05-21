@@ -17,6 +17,7 @@ import { authenticateWithPassword } from '@/http/routes/auth/authenticate-with-p
 import { getProfile } from '@/http/routes/auth/get-profile.ts'
 import { requestPasswordRecover } from '@/http/routes/auth/request-password-recover.ts'
 import { resetPassword } from '@/http/routes/auth/reset-password.ts'
+import { createOrganization } from '@/http/routes/orgs/create-organization.ts'
 
 import { createAccount } from './routes/auth/create-account'
 
@@ -63,6 +64,8 @@ app.register(authenticateWithGithub)
 app.register(getProfile)
 app.register(requestPasswordRecover)
 app.register(resetPassword)
+
+app.register(createOrganization)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
