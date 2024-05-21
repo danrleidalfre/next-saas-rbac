@@ -22,7 +22,7 @@ export async function createAccount(app: FastifyInstance) {
           400: z.object({
             message: z.string(),
           }),
-          201: {},
+          201: z.null(),
         },
       },
     },
