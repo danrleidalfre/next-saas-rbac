@@ -18,6 +18,9 @@ import { getProfile } from '@/http/routes/auth/get-profile.ts'
 import { requestPasswordRecover } from '@/http/routes/auth/request-password-recover.ts'
 import { resetPassword } from '@/http/routes/auth/reset-password.ts'
 import { createOrganization } from '@/http/routes/orgs/create-organization.ts'
+import { getMembership } from '@/http/routes/orgs/get-membership'
+import { getOrganization } from '@/http/routes/orgs/get-organization.ts'
+import { getOrganizations } from '@/http/routes/orgs/get-organizations.ts'
 
 import { createAccount } from './routes/auth/create-account'
 
@@ -66,6 +69,9 @@ app.register(requestPasswordRecover)
 app.register(resetPassword)
 
 app.register(createOrganization)
+app.register(getMembership)
+app.register(getOrganization)
+app.register(getOrganizations)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
