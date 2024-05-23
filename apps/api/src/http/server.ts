@@ -26,6 +26,9 @@ import { transferOrganization } from '@/http/routes/orgs/transfer-organization.t
 import { updateOrganization } from '@/http/routes/orgs/update-organization.ts'
 import { createProject } from '@/http/routes/projects/create-project.ts'
 import { deleteProject } from '@/http/routes/projects/delete-project.ts'
+import { getProject } from '@/http/routes/projects/get-project.ts'
+import { getProjects } from '@/http/routes/projects/get-projects.ts'
+import { updateProject } from '@/http/routes/projects/update-project.ts'
 
 import { createAccount } from './routes/auth/create-account'
 
@@ -83,6 +86,9 @@ app.register(transferOrganization)
 
 app.register(createProject)
 app.register(deleteProject)
+app.register(getProject)
+app.register(getProjects)
+app.register(updateProject)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
