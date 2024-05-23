@@ -17,6 +17,9 @@ import { authenticateWithPassword } from '@/http/routes/auth/authenticate-with-p
 import { getProfile } from '@/http/routes/auth/get-profile.ts'
 import { requestPasswordRecover } from '@/http/routes/auth/request-password-recover.ts'
 import { resetPassword } from '@/http/routes/auth/reset-password.ts'
+import { getMembers } from '@/http/routes/members/get-members.ts'
+import { removeMember } from '@/http/routes/members/remove-member.ts'
+import { updateMember } from '@/http/routes/members/update-member.ts'
 import { createOrganization } from '@/http/routes/orgs/create-organization.ts'
 import { getMembership } from '@/http/routes/orgs/get-membership'
 import { getOrganization } from '@/http/routes/orgs/get-organization.ts'
@@ -89,6 +92,10 @@ app.register(deleteProject)
 app.register(getProject)
 app.register(getProjects)
 app.register(updateProject)
+
+app.register(getMembers)
+app.register(updateMember)
+app.register(removeMember)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
