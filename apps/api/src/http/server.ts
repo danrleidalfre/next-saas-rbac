@@ -17,6 +17,7 @@ import { authenticateWithPassword } from '@/http/routes/auth/authenticate-with-p
 import { getProfile } from '@/http/routes/auth/get-profile.ts'
 import { requestPasswordRecover } from '@/http/routes/auth/request-password-recover.ts'
 import { resetPassword } from '@/http/routes/auth/reset-password.ts'
+import { getOrganizationBilling } from '@/http/routes/billing/get-organization-billing.ts'
 import { createInvite } from '@/http/routes/invites/create-invite.ts'
 import { getInvite } from '@/http/routes/invites/get-invite.ts'
 import { getInvites } from '@/http/routes/invites/get-invites.ts'
@@ -111,6 +112,8 @@ app.register(acceptInvite)
 app.register(rejectInvite)
 app.register(revokeInvite)
 app.register(getPendingInvites)
+
+app.register(getOrganizationBilling)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
