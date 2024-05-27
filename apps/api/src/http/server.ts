@@ -20,6 +20,7 @@ import { resetPassword } from '@/http/routes/auth/reset-password.ts'
 import { createInvite } from '@/http/routes/invites/create-invite.ts'
 import { getInvite } from '@/http/routes/invites/get-invite.ts'
 import { getInvites } from '@/http/routes/invites/get-invites.ts'
+import { rejectInvite } from '@/http/routes/invites/reject-invite.ts'
 import { getMembers } from '@/http/routes/members/get-members.ts'
 import { removeMember } from '@/http/routes/members/remove-member.ts'
 import { updateMember } from '@/http/routes/members/update-member.ts'
@@ -37,6 +38,9 @@ import { getProjects } from '@/http/routes/projects/get-projects.ts'
 import { updateProject } from '@/http/routes/projects/update-project.ts'
 
 import { createAccount } from './routes/auth/create-account'
+import { acceptInvite } from './routes/invites/accept-invite'
+import { getPendingInvites } from './routes/invites/get-pending-invites'
+import { revokeInvite } from './routes/invites/revoke-invite'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -103,6 +107,10 @@ app.register(removeMember)
 app.register(createInvite)
 app.register(getInvite)
 app.register(getInvites)
+app.register(acceptInvite)
+app.register(rejectInvite)
+app.register(revokeInvite)
+app.register(getPendingInvites)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
