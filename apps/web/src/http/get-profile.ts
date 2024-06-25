@@ -10,7 +10,5 @@ interface GetProfileResponse {
 }
 
 export async function getProfile() {
-  const result = await api.get('profile').json<GetProfileResponse>()
-
-  return result
+  return await api.get('profile').json<GetProfileResponse>()
 }
