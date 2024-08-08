@@ -1,3 +1,4 @@
+import { Billing } from '@/app/(app)/org/[slug]/settings/billing'
 import { ability, getCurrentOrg } from '@/auth/auth'
 import {
   Card,
@@ -48,7 +49,7 @@ export default async function Settings() {
           </Card>
         )}
 
-        {canGetBilling && <div>billing</div>}
+        {canGetBilling && <Billing />}
 
         {canShutdownOrganization && (
           <Card>
